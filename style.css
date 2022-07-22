@@ -7,16 +7,12 @@ header{
     width: 100%;
     
 }
-/*
-.box-logo{
-    width: 8%;
-    height: 80%;
-    background-image: url(/01.IntroALaWeb/Proyectos/Proyecto-Netflix/src/netflix.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-left: 3%;
-    margin-right: 3%;
+
+.imagen{
+    width: 35px;
+    height: 35px;
+    margin-left: 3rem;
+    padding-bottom: 3px;
 }
 /*nav{
     width: 100%;
