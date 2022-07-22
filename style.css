@@ -60,9 +60,9 @@ nav .box-icon{
 .pelicula{
 
     font-size: 16px;
-    min-height: 28.125em;
+    min-height: 35.125em;
     color: #e5e5e5;
-    background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%), url(https://images3.alphacoders.com/610/thumb-1920-610318.jpg);
+    background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%), url(./src/Movie-projector-retro-style_3840x2160.jpg);
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -71,10 +71,14 @@ nav .box-icon{
 .box-titulo{
     width: 70%;
     height: auto;
-    margin-left: 3em;
+    margin-left: 4em;
     text-align: justify;
-    margin-bottom: 8em;
+    margin-bottom: 10em;
     
+}
+
+.descripcion{
+    margin-top: 2em;
 }
 
 .btn{
