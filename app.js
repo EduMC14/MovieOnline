@@ -33,3 +33,8 @@ function paintMovies(data){
     containerCarrusel.appendChild(divMovie)
     });
 }
+
+//dropdown de películas en el header
+$(document).ready( function() {
+    $('.dropdown-toggle').dropdown();
+    });
