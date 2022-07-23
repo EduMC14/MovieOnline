@@ -8,25 +8,81 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script defer src="InfoPelis.js"></script>
+    <script src="InfoPelis.js"></script>
+    <script src="https://kit.fontawesome.com/5ce9e95d75.js" crossorigin="anonymous"></script>
 </head>
+<header class="container-fluid" style="color:#383537">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="box-logo" href="#">
+                        <img class="imagen" src="./src/Sin título-2.png">
+                    </div>
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Series</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                    Películas</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Acción</a></li>
+                                    <li><a class="dropdown-item" href="#">Animación</a></li>                
+                                    <li><a class="dropdown-item" href="#">Fantasía</a></li>
+                                    <li><a class="dropdown-item" href="#">Comedia</a></li>
+                                    <li><a class="dropdown-item" href="#">Aventura</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Novedades Populares</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Mi lista</a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>       
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
+                    </form>
+                    <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+                        <li class="nav-item me-4 mt-2">
+                            <span style="color:#e5e5e5 ;">Niños</span>
+                        </li>
+                        <li class="nav-item me-4 mt-2">
+                            <span style="color:#e5e5e5"><i class="fa-solid fa-bell"></i></span>
+                        </li>
+                        <li class="nav-item me-4">
+                            <div class="box-user"></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+</header>
 <body>
     <div class="container-fluid my-3 d-flex justify-content-center align-items-center text-white" style="color:#383537" id="contenedor_fondo">
-        <div class="container">
-            <h2>Movie Name</h2>
-            <div class="single-info">
+        <div class="container-fluid bg-light" style="height:700px" id="InfoPelis">
+            <h2 id="name">Movie Name</h2>
+            <div class="single-info" id="overview">
                 <span>Overview </span>
                 <span></span>
             </div>
-            <div class="single-info">
+            <div class="single-info" id="rate">
                 <span>Rate: </span>
                 <span></span>
             </div>
-            <div class="single-info">
+            <div class="single-info" id="release date">
                 <span>Release Date: </span>
                 <span></span>
             </div>
-            <div class="single-info">
+            <div class="single-info" id="cast">
                 <span>Cast: </span>
                 <span></span>
             </div>

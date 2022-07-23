@@ -53,12 +53,5 @@ function keep_in_local_storage(data){
     })
 }
 
-// if(divMovie){
-//     divMovie.addEventListener('click', (e)=>{
-//         //console.log(e.target.name);
-//         localStorage.setItem('overview',e.target.overview); 
-//         console.log(e.target.overview);
-//         window.location="InfoPelis.html"; 
-//     })
-// }
+
 

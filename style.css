@@ -212,3 +212,15 @@ color: #141414;
     vertical-align: top;
 }
 
+
+
+/*--Página donde se visualiza la info de las pelis--*/
+
+#InfoPelis{
+        font-size: 20px;
+        color: #e5e5e5;
+        background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%);
+        background-position: center center;
+        background-size: cover;
+      
+}

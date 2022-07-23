@@ -9,10 +9,5 @@ const containerFondo=document.querySelector('#contenedor_fondo');
 
 
 
-async function getInformation(){
-    let overview = await fetch('https://api.themoviedb.org/3/tv/1?api_key=128b82f8ca5b357f9e46e57d6455ae9b');
-    overview = await overview.json()
-    console.log(await overview.overview)
-  }
-  
-  getInformation();
+moviedata = JSON.parse(localStorage.getItem('overview'));
+console.log(moviedata);
