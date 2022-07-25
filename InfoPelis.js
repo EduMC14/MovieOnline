@@ -9,5 +9,8 @@ const containerFondo=document.querySelector('#contenedor_fondo');
 
 
 
-moviedata = JSON.parse(localStorage.getItem('overview'));
-console.log(moviedata);
+/* moviedata = JSON.parse(localStorage.getItem('overview'));
+console.log(moviedata); */
+
+
+
