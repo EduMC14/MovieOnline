@@ -10,7 +10,7 @@ const containerCarrusel = document.querySelector('.carrusel');
 
 function getMovies(url){
     fetch(url).then(response => response.json()).then(data => {
-        // console.log(data.results);
+         //console.log(data.results);
         paintMovies(data.results);
         keep_in_local_storage(data.results);
     }
@@ -42,16 +42,16 @@ $(document).ready( function() {
 function keep_in_local_storage(data){
     data.forEach(movie => {
         const {title, overview} = movie
+        console.log(movie.genre_ids)
 
-         localStorage.setItem('overview',overview); 
-        // let film_poster = document.querySelector('#box-'+title);
+        localStorage.setItem('movieTitle', movie.title); 
+        
         let film_poster = document.getElementById('box-'+title)
-
-        film_poster.addEventListener('click', ()=>{
+        //console.log(film_poster)
+        film_poster.addEventListener('click', (e)=>{
             window.location="InfoPelis.html"; 
         })
     })
 }
-
 
 

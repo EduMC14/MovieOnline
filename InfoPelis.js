@@ -7,7 +7,8 @@ const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';*/
 
 const containerFondo=document.querySelector('#contenedor_fondo');
 
+let overview=document.getElementById('#overview');
 
 
-moviedata = JSON.parse(localStorage.getItem('overview'));
-console.log(moviedata);
+movieOver = localStorage.getItem('movie');
+console.log(movieOver)
