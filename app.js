@@ -6,7 +6,7 @@ const API_URL = BASE_URL + '/movie/popular?api_key=' + API_KEY;
 const API_IMAGEN = 'https://image.tmdb.org/t/p/original/'
 
 const containerCarrusel = document.querySelector('.carrusel');
-const popup_container = document.querySelector('.popup-container')
+//const popup_container = document.querySelector('.popup-container')
 
 
 
@@ -55,7 +55,7 @@ function keep_in_local_storage(data){
         //console.log(film_poster)
         film_poster.addEventListener('click', (e)=>{
             localStorage.setItem('movieTitle', e.target.title); 
-            //window.location="InfoPelis.html"; 
+            window.location="InfoPelis.html"; 
         })
     })
 }
