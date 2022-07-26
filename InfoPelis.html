@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="InfoPelis.js"></script>
+    <script defer src="/InfoPelis.js"></script>
     <script src="https://kit.fontawesome.com/5ce9e95d75.js" crossorigin="anonymous"></script>
 </head>
 <header class="container-fluid" style="color:#383537">
@@ -69,22 +69,22 @@
 <body>
     <div class="container-fluid my-3 d-flex justify-content-center align-items-center text-white" style="color:#383537" id="contenedor_fondo">
         <div class="container-fluid bg-light" style="height:700px" id="InfoPelis">
-            <h2 id="name">Movie Name</h2>
+            <h2 class="nameMovie">Movie Name</h2>
+            <div><img src="" alt="" class="imgMovie"></div>
             <div class="single-info" id="overview">
-                <span>Overview </span>
-                <span></span>
+                <span >Overview:</span>
+                <p class="descripcion"></p>
             </div>
             <div class="single-info" id="rate">
-                <span>Rate: </span>
-                <span></span>
+                <span class="vote">Vote Average:</span>
             </div>
             <div class="single-info" id="release date">
                 <span>Release Date: </span>
-                <span></span>
+                <span class="date"></span>
             </div>
             <div class="single-info" id="cast">
                 <span>Cast: </span>
-                <span></span>
+                <ul class="list-cast"></ul>
             </div>
         </div>
     </div>

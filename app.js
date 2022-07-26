@@ -13,12 +13,12 @@ function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
         // console.log(data.results);
         paintMovies(data.results, containerPaint);
-        keep_in_local_storage(data.results);
+        paintInfoPelis(data.results)
     }
     )
 }
 
-getMovies(API_URL,containerCarrusel);
+getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
 
 
@@ -29,11 +29,9 @@ function paintMovies(data,containerPaint){
     divMovie.classList.add('box-pelis')
     divMovie.id = 'box-' + title
     divMovie.innerHTML = `
-    <a href="infoPelis.html" id="link-pelis"><img src="${API_IMAGEN}${poster_path}" alt="${title}"></a>
+    <a href="#" id="link-pelis"><img src="${API_IMAGEN}${poster_path}" alt="${title}"></a>
     `
     containerPaint.appendChild(divMovie)
-
-
     });
 }
 
@@ -46,20 +44,48 @@ $(document).ready( function() {
     $('.dropdown-toggle').dropdown();
     });
 
+/* import {getData} from './InfoPelis'; */
 
-function keep_in_local_storage(data){
+function paintInfoPelis(data){
     data.forEach(movie => {
-        const {title, overview} = movie
-
-        localStorage.setItem('overview',overview); 
+        const  {title, id} = movie
         // let film_poster = document.querySelector('#box-'+title);
         let film_poster = document.getElementById('box-'+title)
-
+        //console.log(film_poster)
         film_poster.addEventListener('click', ()=>{
-            window.location="InfoPelis.html"; 
+        window.location=`InfoPelis.html?${id}`;
+        
         })
     })
 }
 
+
+
+
+/* function keep_in_local_storage(data){
+
+    data.forEach(movie => {
+
+        const {overview, title, release_date, id} = movie
+        // let film_poster = document.querySelector('#box-'+title);
+        let film_poster = document.getElementById('box-'+title)
+        //console.log(film_poster)
+        film_poster.addEventListener('click', ()=>{
+            window.location="InfoPelis.html";
+            let movieObj = new CreatMovieObj(title,overview,release_date,id);
+            localStorage.setItem('objMovie', JSON.stringify(movieObj));
+        })
+    })
+}
+
+
+class CreatMovieObj{
+    constructor(title, overview,release_date,id){
+        this.title = title;
+        this.overview = overview;
+        this.release_date = release_date;
+        this.movie_id = id;
+    }
+}; */
 
 

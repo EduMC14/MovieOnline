@@ -224,3 +224,35 @@ color: #141414;
         background-size: cover;
 
 }
+
+
+/*Página donde se visualiza la lista de pelis dependiendo el género)*/
+#container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#container div {
+    flex: 2;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px;
+    padding: 13px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #21187727;
+}
+#container div img {
+    box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
+    max-width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    transition: transform .5s ease;
+}
+#container div img:hover {
+    transform: scale(1.1);
+}
+h2{
+    margin-bottom: 20px;
+    margin-top: auto;
+}
