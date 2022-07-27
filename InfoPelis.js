@@ -1,6 +1,6 @@
 
 const API_IMAGEN2 = 'https://image.tmdb.org/t/p/w200';
-
+const API_CAST = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=128b82f8ca5b357f9e46e57d6455ae9b`;
 let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
@@ -32,9 +32,17 @@ function paintOverview(data){
 
     document.querySelector('.date').textContent += ` ${data.release_date}`
 
-    fetch()
-
-
+    
+        fetch(API_CAST).then(response => response.json()).then( objCast => {
+            console.log(objCast.cast[0].name);
+    
+            for (let index = 0; index < 5; index++) {
+                let li = document.createElement('li');
+                li.textContent = `${objCast.cast[index].name} interpretando a ${objCast.cast[index].character}`
+                boxLista.appendChild(li)
+            }
+            
+        });
 /*  boxInfo.innerHTML = `<div class="container-fluid bg-light" style="height:700px" id="InfoPelis">
     <h2 class="nameMovie">Movie Name</h2>
     <h3>${data.title}</h3

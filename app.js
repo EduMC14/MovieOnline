@@ -14,6 +14,7 @@ function getMovies(url, containerPaint){
         // console.log(data.results);
         paintMovies(data.results, containerPaint);
         paintInfoPelis(data.results)
+        selectOption()
     }
     )
 }
@@ -36,14 +37,35 @@ function paintMovies(data,containerPaint){
 }
 
 
-
-
-
 //dropdown de películas en el header
 $(document).ready( function() {
     $('.dropdown-toggle').dropdown();
     });
 
+ //funcionalidad de las opciones del dropdown   
+function selectOption(){
+        let btn_accion=document.getElementById('Acción');
+        let btn_animacion=document.getElementById('Animación')
+        let btn_fantasia=document.getElementById('Fantasía')
+        let btn_comedia=document.getElementById('Comedia')
+        let btn_aventura=document.getElementById('Aventura')
+
+        btn_accion.addEventListener('click', (e)=>{
+        window.location='Pelisgenero.html?accion';
+        })
+        btn_animacion.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?animacion';
+            })
+        btn_fantasia.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?fantasia';
+            })   
+        btn_comedia.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?comedia';
+            }) 
+        btn_aventura.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?aventura';
+            }) 
+}
 /* import {getData} from './InfoPelis'; */
 
 function paintInfoPelis(data){
@@ -88,5 +110,6 @@ class CreatMovieObj{
         this.movie_id = id;
     }
 }; */
+
 
 

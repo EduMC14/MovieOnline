@@ -20,13 +20,13 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="box-logo" href="#">
-                        <img class="imagen" src="./src/Sin título-2.png">
+                        <a href="index.html"><img class="imagen" id='imagen'src="./src/Sin título-2.png"></a>
                     </div>
                     <div class="container">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <a href="./index.html" class="nav-link active" aria-current="page" >Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Series</a>
@@ -35,11 +35,11 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                                     Películas</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Acción</a></li>
-                                    <li><a class="dropdown-item" href="#">Animación</a></li>                
-                                    <li><a class="dropdown-item" href="#">Fantasía</a></li>
-                                    <li><a class="dropdown-item" href="#">Comedia</a></li>
-                                    <li><a class="dropdown-item" href="#">Aventura</a></li>
+                                    <li><a class="dropdown-item" id='Acción' href="#">Acción</a></li>
+                                    <li><a class="dropdown-item" id='Animación' href="#">Animación</a></li>                
+                                    <li><a class="dropdown-item" id='Fantasía' href="#">Fantasía</a></li>
+                                    <li><a class="dropdown-item" id='Comedia' href="#">Comedia</a></li>
+                                    <li><a class="dropdown-item" id='Aventura' href="#">Aventura</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -53,7 +53,7 @@
                     </div>       
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
+                        <button class="btn btn-outline-success" id="btn_search" onclick=" add_searched_movies_to_dom ()" type="submit"><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
                     </form>
                     <ul class="navbar-nav me-4 mb-2 mb-lg-0">
                         <li class="nav-item me-4 mt-2">
@@ -118,7 +118,7 @@
             </div>
             </div>
         </div>
-        <div class="popup-container"></div>
+        
     </main>
 
 
