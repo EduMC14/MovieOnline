@@ -3,7 +3,7 @@ let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
 
-let id = urlPag.substring(indice + 1, urlPag.length)
+let id = urlPag.substring(indice + 1, urlPag.length);
 console.log(id);
 
 const API_CAST = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=128b82f8ca5b357f9e46e57d6455ae9b`;
@@ -21,8 +21,13 @@ function getDescripcionMovie(idMovie){
         paintOverview(movie);
     })
 };
+//container_fondo.style.background = `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
+
 
 function paintOverview(data){
+    
+    let contenedor_fondo=document.getElementById('contenedor_fondo')
+    contenedor_fondo.style.backgroundImage = `linear-gradient(to left, rgba(0, 0, 0, .1), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
 
     document.querySelector('.nameMovie').textContent = data.title;
 
@@ -48,6 +53,7 @@ function paintOverview(data){
     });
 
 };
+
 
 
 

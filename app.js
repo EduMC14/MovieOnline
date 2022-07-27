@@ -13,8 +13,9 @@ function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
         // console.log(data.results);
         paintMovies(data.results, containerPaint);
-        paintInfoPelis(data.results)
-        arrBuscar.push(data.results)
+        paintInfoPelis(data.results);
+        arrBuscar.push(data.results);
+        selectOption();
     }
     )
 }
@@ -61,6 +62,7 @@ function paintMovies(data,containerPaint){
     let divMovie = document.createElement('div')
     divMovie.classList.add('box-pelis')
     divMovie.id = 'box-' + title
+    console.log(divMovie.id)
     divMovie.innerHTML = `
     <a href="#" id="link-pelis"><img src="${API_IMAGEN}${poster_path}" alt="${title}"></a>
     `
@@ -74,6 +76,30 @@ $(document).ready( function() {
     $('.dropdown-toggle').dropdown();
     });
 
+ //funcionalidad de las opciones del dropdown   
+function selectOption(){
+        let btn_accion=document.getElementById('Acción');
+        let btn_animacion=document.getElementById('Animación')
+        let btn_fantasia=document.getElementById('Fantasía')
+        let btn_comedia=document.getElementById('Comedia')
+        let btn_aventura=document.getElementById('Aventura')
+
+        btn_accion.addEventListener('click', (e)=>{
+        window.location='Pelisgenero.html?accion';
+        })
+        btn_animacion.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?animacion';
+            })
+        btn_fantasia.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?fantasia';
+            })   
+        btn_comedia.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?comedia';
+            }) 
+        btn_aventura.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?aventura';
+            }) 
+}
 /* import {getData} from './InfoPelis'; */
 
 function paintInfoPelis(data){
@@ -88,6 +114,7 @@ function paintInfoPelis(data){
         })
     })
 }
+
 
 
 

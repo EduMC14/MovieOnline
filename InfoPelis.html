@@ -17,13 +17,13 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="box-logo" href="#">
-                        <img class="imagen" src="./src/Sin título-2.png">
+                        <a href="index.html"><img class="imagen" id='imagen'src="./src/Sin título-2.png"></a>
                     </div>
                     <div class="container">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <a href="./index.html" class="nav-link active" aria-current="page" >Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Series</a>
@@ -68,29 +68,37 @@
         </div>
 </header>
 <body>
-    <div class="container-fluid my-3 d-flex justify-content-center align-items-center text-white" style="color:#383537" id="contenedor_fondo">
-        <div class="container-fluid bg-light" style="height:700px" id="InfoPelis">
-            <h2 class="nameMovie">Movie Name</h2>
-            <div><img src="" alt="" class="imgMovie"></div>
-            <div class="single-info" id="overview">
-                <span >Overview:</span>
-                <p class="descripcion"></p>
+    <div class="container-fluid my-3 d-flex justify-content-center align-items-center text-white"  id="contenedor_fondo">
+        <div class="container-fluid ms-5" style="height:700px" id="InfoPelis"> 
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h1 class="nameMovie py-4">Movie Name</h1>
+                </div>
+                <div class="col-12 col-md-4 col-lg-2 me-5"><img src="" alt="" class="imgMovie"></div>
+                <div class="single-info col-12 col-md-4 col-lg-5 fs-6" id="overview">
+                    <span>Overview: <p class="descripcion"></p></span>
+                    
+                </div>
             </div>
-            <div class="single-info" id="rate">
-                <span class="vote">Vote Average:</span>
+            <div class="row">
+                <div class="single-info" id="rate">
+                    <span class="vote fs-6">Vote Average:</span>
+                </div>
+                <div class="single-info" id="release date">
+                    <span class="date fs-6">Release Date: </span>
+                    
+                </div>
             </div>
-            <div class="single-info" id="release date">
-                <span>Release Date: </span>
-                <span class="date"></span>
-            </div>
-            <div class="single-info" id="cast">
-                <span>Cast: </span>
-                <ul class="list-cast"></ul>
-            </div>
+            <div class="row">
+                <div class="single-info" id="cast">
+                    <span>Cast: <ul class="list-cast"></ul></span>
+                    
+                </div>
+            </div>        
         </div>
     </div>
 
-    <script src="InfoPelis.js"></script>
+   
     
 </body>
 </html>

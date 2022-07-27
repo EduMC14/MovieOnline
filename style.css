@@ -216,17 +216,29 @@ color: #141414;
 
 /*--Página donde se visualiza la info de las pelis--*/
 
-#InfoPelis{
-        font-size: 20px;
-        color: #e5e5e5;
-        background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%);
-        background-position: center center;
-        background-size: cover;
 
-}
+ #contenedor_fondo{
+    font-size: 20px;
+    position: relative;
+    width: 80%;
+    max-height: 50%;
+    /* background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 1)), url(https://unsplash.it/1600/900); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: absolute;
+    top: 0;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    color: #fff;
+    padding: 3rem;
+
+} 
 
 
-/*Página donde se visualiza la lista de pelis dependiendo el género)*/
+
+
+/*--Página donde se visualiza la lista de pelis dependiendo el género--*/
 #container {
     width: 100%;
     display: flex;
@@ -255,4 +267,74 @@ color: #141414;
 h2{
     margin-bottom: 20px;
     margin-top: auto;
+}
+
+
+.card {
+    width: clamp(150px, 95vw, 250px);
+    box-shadow: 0 0 .5rem rgb(93, 204, 255);
+    background: linear-gradient(to right, rgb(73, 72, 72), rgb(2, 1, 2));
+    border-image:  linear-gradient(45deg, rgb(218, 64, 205), rgb(90, 175, 255)) 1;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: .5rem;
+}
+.img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    transition: 200ms ease-in-out transform;
+}
+.img img {
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+}
+.img::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient(to top, #151515, transparent);
+}
+.info {
+    padding: 2rem 1rem 1rem;
+}
+.info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+.single-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .8rem;
+    margin: .2rem 0;
+}
+.card:hover .img {
+    transform: scale(1.1);
+}
+
+.movies-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    gap: 5rem;
+    padding: 1rem;
+}
+
+.movies-container {
+    padding: 1rem;
+    text-align: center;
+    color: rgb(235, 235, 235);
+    margin-top: 2rem;
+}
+
+.movies-container h1{
+    margin-bottom: 3rem;
 }
