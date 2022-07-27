@@ -1,6 +1,4 @@
 
-const API_IMAGEN2 = 'https://image.tmdb.org/t/p/w200';
-
 let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
@@ -8,7 +6,11 @@ let indice = window.location.href.indexOf('?');
 let id = urlPag.substring(indice + 1, urlPag.length)
 console.log(id);
 
+const API_CAST = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=128b82f8ca5b357f9e46e57d6455ae9b`;
+const API_IMAGEN2 = 'https://image.tmdb.org/t/p/w200';
 const boxInfo = document.getElementById('contenedor-fondo');
+
+const boxLista = document.querySelector('.list-cast')
 
 getDescripcionMovie(id);
 
@@ -32,26 +34,18 @@ function paintOverview(data){
 
     document.querySelector('.date').textContent += ` ${data.release_date}`
 
-    fetch()
+    fetch(API_CAST).then(response => response.json()).then( objCast => {
+        console.log(objCast.cast[0].name);
 
-
-/*  boxInfo.innerHTML = `<div class="container-fluid bg-light" style="height:700px" id="InfoPelis">
-    <h2 class="nameMovie">Movie Name</h2>
-    <h3>${data.title}</h3
-    <div class="single-info" id="overview">
-        <div><img src="" alt=""></div>
-        <span class="descripcion">Overview:</span>
-        <p class="descripcion">${data.overview}</p>
-    </div>
-    <div class="single-info" id="rate">
-        <span>Vote Average: </span>
-        <span>${data.vote_average}</span>
-    </div>
-    <div class="single-info" id="release date">
-        <span>Release Date: </span>
-        <span>${data.release_date}</span>
-    </div>
-</div>` */
+        for (let index = 0; index < 5; index++) {
+            let anchor = document.createElement('anchor');
+            let li = document.createElement('li');
+            li.innerHTML = `<a href='infoActores.html'>${objCast.cast[index].name}</a> interpretando a ${objCast.cast[index].character}`
+            anchor.appendChild(li)
+            boxLista.appendChild(anchor)
+        }
+        
+    });
 
 };
 

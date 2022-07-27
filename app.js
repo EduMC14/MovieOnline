@@ -14,12 +14,45 @@ function getMovies(url, containerPaint){
         // console.log(data.results);
         paintMovies(data.results, containerPaint);
         paintInfoPelis(data.results)
+        arrBuscar.push(data.results)
     }
     )
 }
-
 getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
+
+let arrBuscar = [];
+console.log(arrBuscar);
+
+let btnSearch = document.querySelector('#btnBuscar');
+
+let input = document.getElementById('inputSearch')
+
+btnSearch.addEventListener('click', (event) => {
+    event.pe
+    for(let i = 0; i < arrBuscar.length; i++){
+        for(let e = 0 ; e < arrBuscar[i].length; e++){
+            if(arrBuscar[i][e].title === input.value){
+            return Swal.fire({
+                title: `${arrBuscar[i][e].title}`,
+                text: 'Pelicula en Catalogo',
+                imageUrl: `${API_IMAGEN}${arrBuscar[i][e].poster_path}`,
+                imageWidth: 400,
+                imageHeight: 300,
+                imageAlt: 'Custom image',
+            })
+            }
+            
+    }
+    return Swal.fire({
+        icon: 'error',
+        title: 'Oops...Lo siento',
+        text: 'No tenemos esta pelicula en el catalogo!'
+    })
+}});
+
+
+
 
 
 function paintMovies(data,containerPaint){
@@ -34,9 +67,6 @@ function paintMovies(data,containerPaint){
     containerPaint.appendChild(divMovie)
     });
 }
-
-
-
 
 
 //dropdown de películas en el header
@@ -59,34 +89,5 @@ function paintInfoPelis(data){
     })
 }
 
-//let movieOver =localStorage.getItem('title');
-
-
-
-/* function keep_in_local_storage(data){
-
-    data.forEach(movie => {
-
-        const {overview, title, release_date, id} = movie
-        // let film_poster = document.querySelector('#box-'+title);
-        let film_poster = document.getElementById('box-'+title)
-        //console.log(film_poster)
-        film_poster.addEventListener('click', ()=>{
-            window.location="InfoPelis.html";
-            let movieObj = new CreatMovieObj(title,overview,release_date,id);
-            localStorage.setItem('objMovie', JSON.stringify(movieObj));
-        })
-    })
-}
-
-
-class CreatMovieObj{
-    constructor(title, overview,release_date,id){
-        this.title = title;
-        this.overview = overview;
-        this.release_date = release_date;
-        this.movie_id = id;
-    }
-}; */
 
 
