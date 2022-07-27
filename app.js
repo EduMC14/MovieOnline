@@ -59,6 +59,7 @@ function paintInfoPelis(data){
     })
 }
 
+//let movieOver =localStorage.getItem('title');
 
 
 
