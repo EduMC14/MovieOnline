@@ -68,26 +68,32 @@
 </header>
 <body>
     <div class="container-fluid my-3 d-flex justify-content-center align-items-center text-white"  id="contenedor_fondo">
-        <div class="container-fluid" style="height:700px">
-            
-                <h2 class="nameMovie">Movie Name</h2>
-                <div><img src="" alt="" class="imgMovie"></div>
-                <div class="single-info" id="overview">
-                    
-                    <p class="descripcion"></p>
+        <div class="container-fluid ms-5" style="height:700px" id="InfoPelis"> 
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h1 class="nameMovie py-4">Movie Name</h1>
                 </div>
+                <div class="col-12 col-md-4 col-lg-2 me-5"><img src="" alt="" class="imgMovie"></div>
+                <div class="single-info col-12 col-md-4 col-lg-5 fs-6" id="overview">
+                    <span>Overview: <p class="descripcion"></p></span>
+                    
+                </div>
+            </div>
+            <div class="row">
                 <div class="single-info" id="rate">
-                    <span class="vote">Vote Average:</span>
+                    <span class="vote fs-6">Vote Average:</span>
                 </div>
                 <div class="single-info" id="release date">
-                    <span class="date">Release Date: </span>
+                    <span class="date fs-6">Release Date: </span>
                     
                 </div>
+            </div>
+            <div class="row">
                 <div class="single-info" id="cast">
-                    <span>Cast: </span>
-                    <ul class="list-cast"></ul>
+                    <span>Cast: <ul class="list-cast"></ul></span>
+                    
                 </div>
-            
+            </div>        
         </div>
     </div>
 

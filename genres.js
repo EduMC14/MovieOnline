@@ -20,7 +20,7 @@ function getMovies(url){
 getMovies(API_URL)
 
 
-//Géneros
+//traer las peliculas por géneros
 let urlPag = window.location.href;
 let indice = window.location.href.indexOf('?');
 let genre_url = urlPag.substring(indice + 1, urlPag.length);
@@ -49,7 +49,8 @@ function keep_genres(data){
         grid_films(selected_films)
         return selected_films
 }
-    
+ 
+//pintar las tarjetas con las películas
 function grid_films(selected_films){
     selected_films.forEach(feature => {
         const {title, poster_path,overview,rate}=feature

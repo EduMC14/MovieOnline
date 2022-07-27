@@ -218,10 +218,10 @@ color: #141414;
 
 
  #contenedor_fondo{
-        font-size: 20px;
-        position: relative;
-    width: 90%;
-    height: 100%;
+    font-size: 20px;
+    position: relative;
+    width: 80%;
+    max-height: 50%;
     /* background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 1)), url(https://unsplash.it/1600/900); */
     background-repeat: no-repeat;
     background-size:cover;
@@ -236,7 +236,9 @@ color: #141414;
 } 
 
 
-/*Página donde se visualiza la lista de pelis dependiendo el género)*/
+
+
+/*--Página donde se visualiza la lista de pelis dependiendo el género--*/
 #container {
     width: 100%;
     display: flex;
@@ -267,7 +269,6 @@ h2{
     margin-top: auto;
 }
 
-/*peliculas por género*/
 
 .card {
     width: clamp(150px, 95vw, 250px);

@@ -23,6 +23,7 @@ function getDescripcionMovie(idMovie){
 
 
 function paintOverview(data){
+    
     let contenedor_fondo=document.getElementById('contenedor_fondo')
     contenedor_fondo.style.backgroundImage = `linear-gradient(to left, rgba(0, 0, 0, .1), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
 
@@ -43,7 +44,8 @@ function paintOverview(data){
         for (let index = 0; index < 5; index++) {
             let li = document.createElement('li');
             li.textContent = `${objCast.cast[index].name} interpretando a ${objCast.cast[index].character}`;
-            boxLista.appendChild(li);
+            document.querySelector('.list-cast').appendChild(li)
+            //boxLista.appendChild(li);
         }
         
     });
