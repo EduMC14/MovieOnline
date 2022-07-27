@@ -5,6 +5,10 @@ let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
 
+
+
+
+
 let id = urlPag.substring(indice + 1, urlPag.length);
 console.log(id);
 const API_CAST = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=128b82f8ca5b357f9e46e57d6455ae9b`;

@@ -67,6 +67,8 @@ function selectOption(){
             window.location='Pelisgenero.html?aventura';
             }) 
 }
+
+
 /* import {getData} from './InfoPelis'; */
 
 function paintInfoPelis(data){
