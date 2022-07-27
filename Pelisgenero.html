@@ -7,8 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5ce9e95d75.js" crossorigin="anonymous"></script>
+   
     <link rel="stylesheet" href="style.css">
-    <script src="./genres.js"></script>
+    <script defer src="./genres.js"></script>
+    <script defer src="app.js" type="module"></script>
 </head>
 <header class="container-fluid" style="color:#383537">
     <div class="row">
@@ -66,7 +69,7 @@
     </div>
 </header>
 <body>
-    <div class="container">
+    <!--<div class="container">
         <div class="row">
             <div class="col-6 col-lg-4">
                 <div class="card d-flex align-items-center p-3">
@@ -99,9 +102,138 @@
             </div>
 
         </div>
-    </div>
-    <div id="containerGenres">
-
     </div>-->
+    
+    <div class="movies-container favorites">
+        <h1 id="genero_principal"></h1>
+        <div class="movies-grid">
+             <!--<div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div> 
+            <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div> 
+            <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div> 
+        </div>  <div class="card" data-id="">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="info">
+                    <h2 id="movie-name"></h2>
+                    <div class="single-info">
+                        <span  id="rate"> </span>
+                        <span> </span>
+                    </div>   
+                </div>
+            </div>-->
+        </div>
+    </div>
+    
 </body>
 </html>

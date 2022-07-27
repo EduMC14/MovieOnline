@@ -29,6 +29,7 @@ function paintMovies(data,containerPaint){
     let divMovie = document.createElement('div')
     divMovie.classList.add('box-pelis')
     divMovie.id = 'box-' + title
+    console.log(divMovie.id)
     divMovie.innerHTML = `
     <a href="#" id="link-pelis"><img src="${API_IMAGEN}${poster_path}" alt="${title}"></a>
     `

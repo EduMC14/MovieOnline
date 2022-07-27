@@ -6,16 +6,20 @@ const API_URL2 = BASE_URL + '/genre/movie/list?api_key=' + API_KEY;
 const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';
 
 let containerGenres=document.getElementById('#containerGenres');
-const main_grid = document.querySelector('div.movies-grid');
-console.log(main_grid)
+const main_grid_title = document.querySelector('.favorites h1');
+const main_grid = document.querySelector('.favorites .movies-grid');
+//console.log(main_grid)
 
 function getMovies(url){
     fetch(url).then(response => response.json()).then(data => {
         // console.log(data.results);
         keep_genres(data.results)
+        //paintInfoPelis(selected_films)
     })}
 
 getMovies(API_URL)
+
+
 //Géneros
 let urlPag = window.location.href;
 let indice = window.location.href.indexOf('?');
@@ -25,35 +29,71 @@ let genre_nombre='';
 function keep_genres(data){
     if(genre_url==='accion'){
         genre_nombre=28;
+        genre_url='Acción';
     }else if(genre_url==='animacion'){
-        genre_nombre=18;
+        genre_nombre=16;
+        genre_url='Animación';
     }else if(genre_url==='fantasia'){
-        genre_nombre=14
+        genre_nombre=14;
+        genre_url='Fantasía';
     }else if(genre_url==='comedia'){
         genre_nombre=35
+        genre_url='Comedia';
     }else if(genre_url==='aventura'){
-        genre_nombre=12
+        genre_nombre=12;
+        genre_url='Aventura';     
     }
+
     let selected_films = data.filter(film => film.genre_ids.includes(genre_nombre) )
         console.log(selected_films)
         grid_films(selected_films)
         return selected_films
-        }
+}
     
 function grid_films(selected_films){
     selected_films.forEach(feature => {
-        const {title}=feature
+        const {title, poster_path,overview,rate}=feature
         let film_id=feature.id;
         let film_titles=feature.title;
         let film_poster=feature.poster_path;
-        //console.log(main_grid)
-        /*let divMovie = document.querySelector('.img')
-    divMovie.classList.add('box-pelis')
-    divMovie.id = 'box-' + title
-    divMovie.innerHTML = `
-    <a href="#" id="link-pelis"><img src="${API_IMAGEN}${film_poster}" alt="${title}"></a>
-    `
-    main_grid.appendChild(divMovie)
-    })*/
-})}
+        
+             
+        main_grid_title.innerText = genre_url
+        main_grid.innerHTML = selected_films.map(e => {
+            //console.log(e.title)
+            return `
+            <div class="card" data-id="${e.id}">
+                <div class="img">
+                    <img src="${API_IMAGEN + e.poster_path}">
+                </div>
+                <div class="info">
+                    <h2>${e.title}</h2>
+                    <div class="single-info">
+                        <span>Rate: </span>
+                        <span>${e.vote_average} / 10</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Release Date: </span>
+                        <span>${e.release_date}</span>
+                    </div>
+                </div>
+            </div>
+        `
+    }).join('')
+        
+})
+}
 
+
+// function paintInfoPelis(selected_films){
+//     selected_films.forEach(movie => {
+//         const  {title, id} = movie
+//         // let film_poster = document.querySelector('#box-'+title);
+//         let film_poster = movie.id
+//         //console.log(film_poster)
+//         film_poster.addEventListener('click', ()=>{
+//         window.location=`InfoPelis.html?${id}`;
+        
+//         })
+//     })
+// }
