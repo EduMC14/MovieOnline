@@ -9,6 +9,8 @@ const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';
 const containerCarrusel = document.querySelector('.carrusel');
 const containerCarrusel2 = document.querySelector('.carrusel-topRank')
 
+
+
 function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
         // console.log(data.results);
@@ -83,6 +85,8 @@ function selectOption(){
         let btn_fantasia=document.getElementById('Fantasía')
         let btn_comedia=document.getElementById('Comedia')
         let btn_aventura=document.getElementById('Aventura')
+        let btn_terror=document.getElementById('Terror')
+        
 
         btn_accion.addEventListener('click', (e)=>{
         window.location='Pelisgenero.html?accion';
@@ -99,7 +103,13 @@ function selectOption(){
         btn_aventura.addEventListener('click', (e)=>{
             window.location='Pelisgenero.html?aventura';
             }) 
+        btn_terror.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?terror';
+            })
+
 }
+
+
 /* import {getData} from './InfoPelis'; */
 
 function paintInfoPelis(data){
@@ -114,6 +124,9 @@ function paintInfoPelis(data){
         })
     })
 }
+
+//Funcionalidad de la barra de búsqueda
+
 
 
 

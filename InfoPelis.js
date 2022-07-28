@@ -3,6 +3,10 @@ let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
 
+
+
+
+
 let id = urlPag.substring(indice + 1, urlPag.length);
 console.log(id);
 
@@ -19,6 +23,7 @@ function getDescripcionMovie(idMovie){
     fetch(API_INFO).then(response => response.json()).then(movie => {
         console.log(movie);
         paintOverview(movie);
+        selectOption()
     })
 };
 //container_fondo.style.background = `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
@@ -54,27 +59,7 @@ function paintOverview(data){
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//dropdown de películas en el header
+$(document).ready( function() {
+    $('.dropdown-toggle').dropdown();
+    });

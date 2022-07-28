@@ -42,11 +42,15 @@ function keep_genres(data){
     }else if(genre_url==='aventura'){
         genre_nombre=12;
         genre_url='Aventura';     
+    }else if(genre_url==='terror'){
+        genre_nombre=27;
+        genre_url='Terror';     
     }
 
     let selected_films = data.filter(film => film.genre_ids.includes(genre_nombre) )
         console.log(selected_films)
         grid_films(selected_films)
+        paintInfoPelis(selected_films) 
         return selected_films
 }
 
@@ -62,8 +66,9 @@ function grid_films(selected_films){
         main_grid_title.innerText = genre_url
         main_grid.innerHTML = selected_films.map(e => {
             //console.log(e.title)
+            
             return `
-            <div class="card" data-id="${e.id}">
+            <div class="card" id="data-${e.id}">
                 <div class="img">
                     <img src="${API_IMAGEN + e.poster_path}">
                 </div>
@@ -80,11 +85,18 @@ function grid_films(selected_films){
                 </div>
             </div>
         `
-    }).join('')
-        
-})
+        }).join('')
+
+    })
 }
 
-
-
-
+function paintInfoPelis(selected_films) {
+    selected_films.forEach(movie => {
+        const { title, id } = movie
+        let film_poster = document.getElementById('data-' + id)
+        console.log(film_poster)
+        film_poster.addEventListener('click', () => {
+            window.location = `InfoPelis.html?${id}`;
+        })
+    })
+}
