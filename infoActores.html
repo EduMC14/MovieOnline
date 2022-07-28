@@ -9,9 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5ce9e95d75.js" crossorigin="anonymous"></script>
     <title>Informacion Actores</title>
+    <script defer src="./infoActores.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body-actors">
     <header class="container-fluid" style="color:#383537">
         <div class="row">
             <div class="col">
@@ -67,5 +71,23 @@
             </div>
         </div>
     </header>
+    <main class="contenedor-principal">
+        <div class="box-name-bio">
+            <div class="box-name-img">
+                <h1 class="nombre">Nombre del actor</h1>
+                <img src="" alt="" id="imgActor">
+                <h4 class="titulo-cumple">Birthday:</h4><span class="cumpleaños"></span>
+            <h4>Place of Birth:</h4><span class="lugar"></span>
+            </div>
+            <div class="box-bio">
+                <h4>Biography:</h4>
+                <p class="biografia"></p>
+                <h3>Peliculas en las que ha participado</h3>
+                <ul class="list-pelis">
+                    
+                </ul>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

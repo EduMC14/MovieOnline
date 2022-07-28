@@ -338,3 +338,49 @@ h2{
 .movies-container h1{
     margin-bottom: 3rem;
 }
+
+/* <--------------Informacion Actores--------------> */
+
+
+.contenedor-principal{
+    background-color: #e5e5e5;
+    width: 98%;
+    height: 100%;
+    margin:auto ;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    
+}
+
+
+.box-name-bio{
+    display: flex;
+    margin: 0 auto 0 40px;
+}
+
+.box-name-img{
+    text-align: center;
+}
+
+.titulo-cumple{
+    margin-top: 20px;
+}
+
+.box-bio{
+    margin-left: 4vw;
+    margin-top: 8vh;
+    width: 60%;
+}
+
+.imgParActor{
+    width: 80px;
+    margin-right: 20px;
+}
+
+.li-par{
+    margin-top: 10px;
+    list-style: none;
+}
+
+

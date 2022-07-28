@@ -25,12 +25,12 @@ getMovies(API_URL2, containerCarrusel2);
 let arrBuscar = [];
 console.log(arrBuscar);
 
-let btnSearch = document.querySelector('#btnBuscar');
+let btnSearch = document.querySelector('#btn_search');
 
 let input = document.getElementById('inputSearch')
 
 btnSearch.addEventListener('click', (event) => {
-    event.pe
+    event.preventDefault();
     for(let i = 0; i < arrBuscar.length; i++){
         for(let e = 0 ; e < arrBuscar[i].length; e++){
             if(arrBuscar[i][e].title === input.value){
@@ -45,12 +45,13 @@ btnSearch.addEventListener('click', (event) => {
             }
             
     }
-    return Swal.fire({
-        icon: 'error',
-        title: 'Oops...Lo siento',
-        text: 'No tenemos esta pelicula en el catalogo!'
-    })
-}});
+    
+}
+return Swal.fire({
+    icon: 'error',
+    title: 'Oops...Lo siento',
+    text: 'No tenemos esta pelicula en el catalogo!'
+})});
 
 
 
@@ -62,7 +63,6 @@ function paintMovies(data,containerPaint){
     let divMovie = document.createElement('div')
     divMovie.classList.add('box-pelis')
     divMovie.id = 'box-' + title
-    console.log(divMovie.id)
     divMovie.innerHTML = `
     <a href="#" id="link-pelis"><img src="${API_IMAGEN}${poster_path}" alt="${title}"></a>
     `

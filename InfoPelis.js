@@ -31,13 +31,13 @@ function paintOverview(data){
 
     document.querySelector('.nameMovie').textContent = data.title;
 
-    document.querySelector('.imgMovie').setAttribute('src', `${API_IMAGEN2}${data.poster_path}`)
+    document.querySelector('.imgMovie').setAttribute('src', `${API_IMAGEN2}${data.poster_path}`);
 
-    document.querySelector('.descripcion').textContent = data.overview
+    document.querySelector('.descripcion').textContent = data.overview;
 
-    document.querySelector('.vote').textContent += ` ${data.vote_average}`
+    document.querySelector('.vote').textContent += ` ${data.vote_average}`;
 
-    document.querySelector('.date').textContent += ` ${data.release_date}`
+    document.querySelector('.date').textContent += ` ${data.release_date}`;
 
     fetch(API_CAST).then(response => response.json()).then( objCast => {
         console.log(objCast.cast[0].name);
@@ -45,7 +45,7 @@ function paintOverview(data){
         for (let index = 0; index < 5; index++) {
             let anchor = document.createElement('anchor');
             let li = document.createElement('li');
-            li.innerHTML = `<a href='infoActores.html'>${objCast.cast[index].name}</a> interpretando a ${objCast.cast[index].character}`
+            li.innerHTML = `<a href='infoActores.html?${objCast.cast[index].id}'>${objCast.cast[index].name}</a> interpretando a ${objCast.cast[index].character}`
             anchor.appendChild(li)
             boxLista.appendChild(anchor)
         }

@@ -49,7 +49,7 @@ function keep_genres(data){
         grid_films(selected_films)
         return selected_films
 }
- 
+
 //pintar las tarjetas con las películas
 function grid_films(selected_films){
     selected_films.forEach(feature => {
