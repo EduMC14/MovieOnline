@@ -57,3 +57,8 @@ function paintOverview(data){
 
 
 };
+
+//dropdown de películas en el header
+$(document).ready( function() {
+    $('.dropdown-toggle').dropdown();
+    });
