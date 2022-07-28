@@ -210,7 +210,12 @@ color: #141414;
     width: 100%;
     height: 100%;
     vertical-align: top;
+    transition: transform .5s ease;
 }
+.peliculas-estrenos .box-car .carrusel .box-pelis img:hover {
+    transform: scale(1.1);
+}
+
 
 
 

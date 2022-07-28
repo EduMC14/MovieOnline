@@ -21,6 +21,7 @@ function getDescripcionMovie(idMovie){
     fetch(API_INFO).then(response => response.json()).then(movie => {
         console.log(movie);
         paintOverview(movie);
+        selectOption()
     })
 };
 //container_fondo.style.background = `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
@@ -56,28 +57,3 @@ function paintOverview(data){
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,15 +9,20 @@ const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';
 const containerCarrusel = document.querySelector('.carrusel');
 const containerCarrusel2 = document.querySelector('.carrusel-topRank')
 
+let arrBuscar = [];
+
 function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
         // console.log(data.results);
         paintMovies(data.results, containerPaint);
         paintInfoPelis(data.results)
+        arrBuscar.push(data.results);
+
         selectOption()
     }
     )
 }
+console.log(arrBuscar)
 
 getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
@@ -83,6 +88,39 @@ function paintInfoPelis(data){
         })
     })
 }
+
+//Funcionalidad de la barra de búsqueda
+
+console.log(arrBuscar);
+
+let btnSearch = document.querySelector('#btnBuscar');
+
+let input = document.getElementById('inputSearch')
+
+btnSearch.addEventListener('click', () => {
+    
+    for(let i = 0; i < arrBuscar.length; i++){
+        for(let e = 0 ; e < arrBuscar[i].length; e++){
+            if(arrBuscar[i][e].title === input.value){
+            return Swal.fire({
+                title: `${arrBuscar[i][e].title}`,
+                text: 'Pelicula en Catalogo',
+                imageUrl: `${API_IMAGEN}${arrBuscar[i][e].poster_path}`,
+                imageWidth: 400,
+                imageHeight: 300,
+                imageAlt: 'Custom image',
+            })
+            }
+            
+    }
+    return Swal.fire({
+        icon: 'error',
+        title: 'Oops...Lo siento',
+        text: 'No tenemos esta pelicula en el catalogo!'
+    })
+}});
+
+
 
 //let movieOver =localStorage.getItem('title');
 
