@@ -42,6 +42,9 @@ function keep_genres(data){
     }else if(genre_url==='aventura'){
         genre_nombre=12;
         genre_url='Aventura';     
+    }else if(genre_url==='terror'){
+        genre_nombre=27;
+        genre_url='Terror';     
     }
 
     let selected_films = data.filter(film => film.genre_ids.includes(genre_nombre) )

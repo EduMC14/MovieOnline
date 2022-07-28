@@ -55,6 +55,8 @@ function selectOption(){
         let btn_fantasia=document.getElementById('Fantasía')
         let btn_comedia=document.getElementById('Comedia')
         let btn_aventura=document.getElementById('Aventura')
+        let btn_terror=document.getElementById('Terror')
+        
 
         btn_accion.addEventListener('click', (e)=>{
         window.location='Pelisgenero.html?accion';
@@ -71,6 +73,10 @@ function selectOption(){
         btn_aventura.addEventListener('click', (e)=>{
             window.location='Pelisgenero.html?aventura';
             }) 
+        btn_terror.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?terror';
+            })
+           
 }
 
 
