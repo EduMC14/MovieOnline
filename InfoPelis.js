@@ -3,10 +3,6 @@ let urlPag = window.location.href;
 
 let indice = window.location.href.indexOf('?');
 
-
-
-
-
 let id = urlPag.substring(indice + 1, urlPag.length);
 console.log(id);
 

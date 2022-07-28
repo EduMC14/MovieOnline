@@ -1,85 +1,92 @@
+<head>
+    <script defer src="./app.js"></script>
+    <script defer src="./genres.js"></script>
+</head>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img class="imagen" id='imagen'src="./src/Sin título-2.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Series</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                        Películas</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" id='Acción' href="#">Acción</a></li>
-                        <li><a class="dropdown-item" id='Animación' href="#">Animación</a></li>                
-                        <li><a class="dropdown-item" id='Fantasía' href="#">Fantasía</a></li>
-                        <li><a class="dropdown-item" id='Comedia' href="#">Comedia</a></li>
-                        <li><a class="dropdown-item" id='Aventura' href="#">Aventura</a></li>
-                        <li><a class="dropdown-item" id='Terror' href="#">Terror</a></li>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img class="imagen" id='imagen'src="./src/Sin título-2.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Series</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            Películas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id='Acción' href="#">Acción</a></li>
+                            <li><a class="dropdown-item" id='Animación' href="#">Animación</a></li>                
+                            <li><a class="dropdown-item" id='Fantasía' href="#">Fantasía</a></li>
+                            <li><a class="dropdown-item" id='Comedia' href="#">Comedia</a></li>
+                            <li><a class="dropdown-item" id='Aventura' href="#">Aventura</a></li>
+                            <li><a class="dropdown-item" id='Terror' href="#">Terror</a></li>
+                            
+                        </ul>
                         
-                    </ul>
-                    
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Novedades Populares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mi lista</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success" id="btn_search" onclick=" add_searched_movies_to_dom ()" type="button"><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
-            </form>
-            <ul class="navbar-nav me-4 mb-2 mb-lg-0">
-                <li class="nav-item me-4 mt-2">
-                    <span style="color:#e5e5e5 ;">Niños</span>
-                </li>
-                <li class="nav-item me-4 mt-2">
-                    <span style="color:#e5e5e5"><i class="fa-solid fa-bell"></i></span>
-                </li>
-                <li class="nav-item">
-                    <div class="box-user"></div>
-                </li>
-            </ul>
-        </div> 
-    </div>     
-    <script>
-        $(document).ready( function() {
-        $('.dropdown-toggle').dropdown();
-        });
-
-        function selectOption(){
-        let btn_accion=document.getElementById('Acción');
-        let btn_animacion=document.getElementById('Animación')
-        let btn_fantasia=document.getElementById('Fantasía')
-        let btn_comedia=document.getElementById('Comedia')
-        let btn_aventura=document.getElementById('Aventura')
-
-        btn_accion.addEventListener('click', (e)=>{
-        window.location='Pelisgenero.html?accion';
-        })
-        btn_animacion.addEventListener('click', (e)=>{
-            window.location='Pelisgenero.html?animacion';
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Novedades Populares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mi lista</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search" id="inputSearch">
+                    <button class="btn btn-outline-success" id="btn_search" type="button" ><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
+                </form>
+                <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+                    <li class="nav-item me-4 mt-2">
+                        <span style="color:#e5e5e5 ;">Niños</span>
+                    </li>
+                    <li class="nav-item me-4 mt-2">
+                        <span style="color:#e5e5e5"><i class="fa-solid fa-bell"></i></span>
+                    </li>
+                    <li class="nav-item">
+                        <div class="box-user"></div>
+                    </li>
+                </ul>
+            </div> 
+        </div>     
+        <script>
+            $(document).ready( function() {
+            $('.dropdown-toggle').dropdown();
+            });
+    
+            function selectOption(){
+            let btn_accion=document.getElementById('Acción');
+            let btn_animacion=document.getElementById('Animación')
+            let btn_fantasia=document.getElementById('Fantasía')
+            let btn_comedia=document.getElementById('Comedia')
+            let btn_aventura=document.getElementById('Aventura')
+    
+            btn_accion.addEventListener('click', (e)=>{
+            window.location='Pelisgenero.html?accion';
             })
-        btn_fantasia.addEventListener('click', (e)=>{
-            window.location='Pelisgenero.html?fantasia';
-            })   
-        btn_comedia.addEventListener('click', (e)=>{
-            window.location='Pelisgenero.html?comedia';
-            }) 
-        btn_aventura.addEventListener('click', (e)=>{
-            window.location='Pelisgenero.html?aventura';
-            }) 
-        }
+            btn_animacion.addEventListener('click', (e)=>{
+                window.location='Pelisgenero.html?animacion';
+                })
+            btn_fantasia.addEventListener('click', (e)=>{
+                window.location='Pelisgenero.html?fantasia';
+                })   
+            btn_comedia.addEventListener('click', (e)=>{
+                window.location='Pelisgenero.html?comedia';
+                }) 
+            btn_aventura.addEventListener('click', (e)=>{
+                window.location='Pelisgenero.html?aventura';
+                }) 
+            }
+    
+        </script>
+    </nav>
+</body>
 
-    </script>
-</nav>

@@ -29,10 +29,11 @@ console.log(arrBuscar);
 
 let btnSearch = document.querySelector('#btn_search');
 
-let input = document.getElementById('inputSearch')
+let input = document.getElementById('inputSearch');
+
 
 btnSearch.addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault()
     for(let i = 0; i < arrBuscar.length; i++){
         for(let e = 0 ; e < arrBuscar[i].length; e++){
             if(arrBuscar[i][e].title === input.value){
@@ -54,6 +55,7 @@ return Swal.fire({
     title: 'Oops...Lo siento',
     text: 'No tenemos esta pelicula en el catalogo!'
 })});
+
 
 
 
