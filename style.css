@@ -4,29 +4,14 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
-    width: 100%;
-    height: 10vh;
-    background-color:rgba(20, 20, 20,0.8) ;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    z-index: 501;
+
+.imagen{
+    width: 40px;
+    height: 40px;
+    margin-left: 3rem;
+    padding-bottom: 4px;
 }
-.box-logo{
-    width: 8%;
-    height: 80%;
-    background-image: url(/01.IntroALaWeb/Proyectos/Proyecto-Netflix/src/netflix.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-left: 3%;
-    margin-right: 3%;
-}
-nav{
+/*nav{
     width: 100%;
     height: 10vh;
     display: flex;
@@ -39,14 +24,13 @@ nav a{
     margin-right: 2.5%;
 }
 
-.box-icon{
-    width: 25%;
-    height: 100%;
+nav .box-icon{
+
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
     align-items: center;
     margin-right: 3%;
-}
+}*/
 
 .box-user{
     width: 30px;
@@ -67,12 +51,11 @@ nav a{
 /*--------Pelicula------- */
 
 .pelicula{
-    margin-top: 10vh;
-    
+
     font-size: 16px;
-    min-height: 28.125em;
+    min-height: 35.125em;
     color: #e5e5e5;
-    background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%), url(https://images3.alphacoders.com/610/thumb-1920-610318.jpg);
+    background: linear-gradient(rgba(0,0,0,.50) 0%, rgba(0,0,0,.50) 100%), url(./src/Movie-projector-retro-style_3840x2160.jpg);
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -81,10 +64,14 @@ nav a{
 .box-titulo{
     width: 70%;
     height: auto;
-    margin-left: 3em;
+    margin-left: 4em;
     text-align: justify;
-    margin-bottom: 5em;
+    margin-bottom: 10em;
     
+}
+
+.descripcion{
+    margin-top: 2em;
 }
 
 .btn{
@@ -111,6 +98,7 @@ color: #141414;
 .peliculas-estrenos{
     margin: 3rem auto;
     width: 90%;
+
     
 }
 
@@ -148,7 +136,14 @@ color: #141414;
 
 
 /* ---------------- Contendedor Principal y Flechas ---------------- */
-
+/*#contenedor-small{
+    margin-top: 25px;
+    width: 100%;
+    text-align:center;
+    background: linear-gradient(to bottom right, rgb(130, 187, 241), rgba(250, 140, 201, 0.411));
+    opacity: ;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
+}*/
 .peliculas-estrenos{
     margin-bottom: 70px;
 }
@@ -215,5 +210,179 @@ color: #141414;
     width: 100%;
     height: 100%;
     vertical-align: top;
+    transition: transform .5s ease;
 }
+.peliculas-estrenos .box-car .carrusel .box-pelis img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/*--Página donde se visualiza la info de las pelis--*/
+
+
+ #contenedor_fondo{
+    font-size: 20px;
+    position: relative;
+    width: 80%;
+    max-height: 50%;
+    /* background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 1)), url(https://unsplash.it/1600/900); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: absolute;
+    top: 0;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    color: #fff;
+    padding: 3rem;
+
+} 
+
+
+/*--Página donde se visualiza la lista de pelis dependiendo el género--*/
+#container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#container div {
+    flex: 2;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px;
+    padding: 13px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #21187727;
+}
+#container div img {
+    box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
+    max-width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    transition: transform .5s ease;
+}
+#container div img:hover {
+    transform: scale(1.1);
+}
+h2{
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+
+.card {
+    width: clamp(150px, 95vw, 250px);
+    box-shadow: 0 0 .5rem rgb(93, 204, 255);
+    background: linear-gradient(to right, rgb(73, 72, 72), rgb(2, 1, 2));
+    border-image:  linear-gradient(45deg, rgb(218, 64, 205), rgb(90, 175, 255)) 1;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: .5rem;
+}
+.img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    transition: 200ms ease-in-out transform;
+}
+.img img {
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+}
+.img::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient(to top, #151515, transparent);
+}
+.info {
+    padding: 2rem 1rem 1rem;
+}
+.info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+.single-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .8rem;
+    margin: .2rem 0;
+}
+.card:hover .img {
+    transform: scale(1.1);
+}
+
+.movies-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 5rem;
+    padding: 1rem;
+}
+
+.movies-container {
+    padding: 1rem;
+    text-align: center;
+    color: rgb(235, 235, 235);
+    margin-top: 2rem;
+}
+
+.movies-container h1{
+    margin-bottom: 3rem;
+}
+
+/* <--------------Informacion Actores--------------> */
+
+
+.contenedor-principal{
+    background-color: #e5e5e5;
+    width: 98%;
+    height: 100%;
+    margin:auto ;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    
+}
+
+
+.box-name-bio{
+    display: flex;
+    margin: 0 auto 0 40px;
+}
+
+.box-name-img{
+    text-align: center;
+}
+
+.titulo-cumple{
+    margin-top: 20px;
+}
+
+.box-bio{
+    margin-left: 4vw;
+    margin-top: 8vh;
+    width: 60%;
+}
+
+.imgParActor{
+    width: 80px;
+    margin-right: 20px;
+}
+
+.li-par{
+    margin-top: 10px;
+    list-style: none;
+}
+
 

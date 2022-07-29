@@ -8,16 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Pagina de Películas</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5ce9e95d75.js" crossorigin="anonymous"></script>
-    <script defer src="app.js" type="module"></script>
-    <script defer src="carruseles.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Informacion Actores</title>
+    <script defer src="./infoActores.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
 </head>
-<body>
+<body class="body-actors">
     <header class="container-fluid" style="color:#383537">
         <div class="row">
             <div class="col" id="nav-placeholder">
@@ -28,13 +27,13 @@
                     </script>
                 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="box-logo" href="#">
-                        <a href="index.html"><img class="imagen" id='imagen'src="./src/Sin título-2.png"></a>
+                        <img class="imagen" src="./src/Sin título-2.png">
                     </div>
                     <div class="container">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active" aria-current="page" >Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Series</a>
@@ -43,11 +42,11 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                                     Películas</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id='Acción' href="#">Acción</a></li>
-                                    <li><a class="dropdown-item" id='Animación' href="#">Animación</a></li>                
-                                    <li><a class="dropdown-item" id='Fantasía' href="#">Fantasía</a></li>
-                                    <li><a class="dropdown-item" id='Comedia' href="#">Comedia</a></li>
-                                    <li><a class="dropdown-item" id='Aventura' href="#">Aventura</a></li>
+                                    <li><a class="dropdown-item" href="#">Acción</a></li>
+                                    <li><a class="dropdown-item" href="#">Animación</a></li>                
+                                    <li><a class="dropdown-item" href="#">Fantasía</a></li>
+                                    <li><a class="dropdown-item" href="#">Comedia</a></li>
+                                    <li><a class="dropdown-item" href="#">Aventura</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -60,8 +59,8 @@
                         </div>
                     </div>       
                     <form class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Search" id="inputSearch">
-                        <button class="btn btn-outline-success" id="btn_search"  type="button"><i class="fa-solid fa-magnifying-glass" style=width:1px;></i></button>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="inputSearch">
+                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass" style=width:1px; id="btnBuscar"></i></button>
                     </form>
                     <ul class="navbar-nav me-4 mb-2 mb-lg-0">
                         <li class="nav-item me-4 mt-2">
@@ -78,56 +77,23 @@
             </div>
         </div> -->
     </header>
-    <main>    
-        <div class="pelicula">
-            <div class="box-titulo">
-            <h1 class="titulo">Bienvenido a MoviesOnline</h1>
-            <h5 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </h5>
-
-                <button class="btn"><i class="fa-solid fa-play"></i>Reproducir</button>
-                <button class="btn"><i class="fa-solid fa-circle-info"></i>Mas Informacion</button>
+    <main class="contenedor-principal bg-dark">
+        <div class="box-name-bio bg-dark text-white">
+            <div class="box-name-img">
+                <h1 class="nombre">Nombre del actor</h1>
+                <img src="" alt="" id="imgActor">
+                <h4 class="titulo-cumple">Birthday:</h4><span class="cumpleaños"></span>
+            <h4>Place of Birth:</h4><span class="lugar"></span>
+            </div>
+            <div class="box-bio">
+                <h4>Biography:</h4>
+                <p class="biografia"></p>
+                <h3>Peliculas en las que ha participado</h3>
+                <ul class="list-pelis">
+                    
+                </ul>
             </div>
         </div>
-
-        <div class="peliculas-estrenos">
-            <div class="box-titulo-controles">
-                <h3 class="titulos-car ms-5 mt-5 mb-0">Estrenos</h3>
-                <div class="indicadores">
-                </div>
-            </div>
-            <div class="container my-3 d-flex justify-content-center align-items-center" id="contenedor-small">
-            <div class="box-carrusel">
-                <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fa-solid fa-angle-left"></i></button>
-                <div class="box-car">
-                    <div class="carrusel"></div>                   
-                </div>
-
-
-                <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fa-solid fa-angle-right"></i></button>
-            </div>
-            </div>
-        </div>
-
-        <div class="peliculas-estrenos">
-            <div class="box-titulo-controles">
-                <h3 class="titulos-car ms-5 mt-5 mb-0">Mejor Calificadas</h3>
-                <div class="indicadores">
-                </div>
-            </div>
-            <div class="container my-3 d-flex justify-content-center align-items-center" id="contenedor-small">
-            <div class="box-carrusel">
-                <button role="button" id="flecha-izquierda" class="flecha-izquierda flecha-izquierda-cal"><i class="fa-solid fa-angle-left"></i></button>
-                <div class="box-car box-car-topRank">
-                    <div class="carrusel carrusel-topRank" ></div>                   
-                </div>
-
-
-                <button role="button" id="flecha-derecha" class="flecha-derecha flecha-derecha-cal"><i class="fa-solid fa-angle-right"></i></button>
-            </div>
-            </div>
-        </div>
-        
     </main>
-
 </body>
 </html>
