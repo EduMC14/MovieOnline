@@ -9,7 +9,7 @@ const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';
 const containerCarrusel = document.querySelector('.carrusel');
 const containerCarrusel2 = document.querySelector('.carrusel-topRank')
 
-
+//traer las películas de la API
 
 function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
@@ -24,12 +24,15 @@ function getMovies(url, containerPaint){
 getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
 
+//Funcionalidad de la barra de búsqueda
+
 let arrBuscar = [];
 console.log(arrBuscar);
 
 let btnSearch = document.querySelector('#btn_search');
 
 let input = document.getElementById('inputSearch');
+
 
 
 btnSearch.addEventListener('click', (event) => {
@@ -45,10 +48,8 @@ btnSearch.addEventListener('click', (event) => {
                 imageHeight: 300,
                 imageAlt: 'Custom image',
             })
-            }
-            
-    }
-    
+            }          
+    }   
 }
 return Swal.fire({
     icon: 'error',
@@ -58,8 +59,7 @@ return Swal.fire({
 
 
 
-
-
+//visualizar las películas
 
 function paintMovies(data,containerPaint){
     data.forEach(movie => {
@@ -112,7 +112,7 @@ function selectOption(){
 }
 
 
-/* import {getData} from './InfoPelis'; */
+//Al darle click al poster, se redirecciona al html con su infomación
 
 function paintInfoPelis(data){
     data.forEach(movie => {
@@ -127,7 +127,7 @@ function paintInfoPelis(data){
     })
 }
 
-//Funcionalidad de la barra de búsqueda
+
 
 
 

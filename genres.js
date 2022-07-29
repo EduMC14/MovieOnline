@@ -20,6 +20,8 @@ let urlPag = window.location.href;
 let indice = window.location.href.indexOf('?');
 let genre_url = urlPag.substring(indice + 1, urlPag.length);
 let genre_nombre='';
+
+
 function keep_genres(data){
     if(genre_url==='accion'){
         genre_nombre=28;
