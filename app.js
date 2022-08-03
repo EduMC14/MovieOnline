@@ -9,7 +9,7 @@ const API_IMAGEN = 'https://image.tmdb.org/t/p/original/';
 const containerCarrusel = document.querySelector('.carrusel');
 const containerCarrusel2 = document.querySelector('.carrusel-topRank')
 
-
+//traer las películas de la API
 
 function getMovies(url, containerPaint){
     fetch(url).then(response => response.json()).then(data => {
@@ -109,7 +109,7 @@ function selectOption(){
 }
 
 
-/* import {getData} from './InfoPelis'; */
+//Al darle click al poster, se redirecciona al html con su infomación
 
 function paintInfoPelis(data){
     data.forEach(movie => {

@@ -19,6 +19,7 @@ getActor(idActor);
 function getActor(id){
     fetch(`${API_ACTORS}${id}?${key}`).then(response => response.json()).then(actor => {
         paintActor(actor);
+        
     })
 };
 
@@ -40,7 +41,8 @@ getPeliculasPar();
 function getPeliculasPar(){
     fetch(`http://api.themoviedb.org/3/discover/movie?with_cast=${idActor}&sort_by=release_date.asc&${key}&page=1`).then(response => response.json()).then(response => {
         console.log(response.results);
-        paintParticipaciones(response.results)
+        paintParticipaciones(response.results);
+        //paintInfoPelis3(response.results);
     }) 
 }
 
@@ -53,3 +55,14 @@ function paintParticipaciones(objPar){
         listPelis.appendChild(liActor);
     };
 };
+
+
+/*function paintInfoPelis3(data){
+    response.forEach(film=> {
+       const  {title, id} = film
+       let film_poster3 = document.getElementById('li-par'+id)
+        console.log(film_poster3)
+        film_poster3.addEventListener('click', ()=>{
+       window.location=`InfoPelis.html?${id}`;
+                 })
+     }) }*/
