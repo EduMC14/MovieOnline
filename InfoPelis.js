@@ -22,7 +22,7 @@ function getDescripcionMovie(idMovie){
         selectOption()
     })
 };
-//container_fondo.style.background = `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 1)), url(${API_IMAGEN2 + data.poster_path})`
+
 
 
 function paintOverview(data){

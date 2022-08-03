@@ -7,19 +7,20 @@ const API_IMAGEN2 = 'https://image.tmdb.org/t/p/original/';
 let containerGenres=document.getElementById('#containerGenres');
 const main_grid_title = document.querySelector('.favorites h1');
 const main_grid = document.querySelector('.favorites .movies-grid');
-//console.log(main_grid)
+
+/* <---- Funcion para obtener peliculas mas populares ----> */
 function getMovies2(url){
     fetch(url).then(response => response.json()).then(data => {
-        // console.log(data.results);
         keep_genres(data.results)
-        //paintInfoPelis(selected_films)
     })}
 getMovies2(API_URL2)
-//traer las peliculas por géneros
+
 let urlPag = window.location.href;
 let indice = window.location.href.indexOf('?');
 let genre_url = urlPag.substring(indice + 1, urlPag.length);
 let genre_nombre='';
+
+
 function keep_genres(data){
     if(genre_url==='accion'){
         genre_nombre=28;
@@ -77,6 +78,8 @@ function grid_films(selected_films){
     }).join('')
     })
 }
+
+/* <----- funcion para pintar informacion de las peliculas ----> */
 function paintInfoPelis2(selected_films) {
     selected_films.forEach(film => {
         const { title, id } = film

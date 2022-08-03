@@ -11,26 +11,7 @@ body{
     margin-left: 3rem;
     padding-bottom: 4px;
 }
-/*nav{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-} 
-nav a{
-    text-decoration: none;
-    color: #e5e5e5;
-    margin-right: 2.5%;
-}
 
-nav .box-icon{
-
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-right: 3%;
-}*/
 
 .box-user{
     width: 30px;
@@ -135,23 +116,15 @@ color: #141414;
 }
 
 
-/* ---------------- Contendedor Principal y Flechas ---------------- */
-/*#contenedor-small{
-    margin-top: 25px;
-    width: 100%;
-    text-align:center;
-    background: linear-gradient(to bottom right, rgb(130, 187, 241), rgba(250, 140, 201, 0.411));
-    opacity: ;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
-}*/
+
 .peliculas-estrenos{
     margin-bottom: 70px;
 }
 
 .peliculas-estrenos .box-carrusel{
- display: flex;
- align-items: center;
- position: relative;
+display: flex;
+align-items: center;
+position: relative;
 }
 
 .peliculas-estrenos .box-carrusel .flecha-izquierda, .peliculas-estrenos .box-carrusel .flecha-derecha{
@@ -170,7 +143,7 @@ color: #141414;
 }
 
 .peliculas-estrenos .box-carrusel .flecha-izquierda:hover, .peliculas-estrenos .box-carrusel .flecha-derecha:hover{
- background-color: rgba(0,0,0,0.9);
+background-color: rgba(0,0,0,0.9);
 }
 
 .peliculas-estrenos .box-carrusel .flecha-izquierda{
@@ -222,7 +195,7 @@ color: #141414;
 /*--Página donde se visualiza la info de las pelis--*/
 
 
- #contenedor_fondo{
+#contenedor_fondo{
     font-size: 20px;
     position: relative;
     width: 80%;
@@ -239,6 +212,14 @@ color: #141414;
     padding: 3rem;
 
 } 
+
+.descripcion{
+    margin-left: 5px;
+}
+
+.title-over{
+    margin-left: 25px;
+}
 
 
 /*--Página donde se visualiza la lista de pelis dependiendo el género--*/

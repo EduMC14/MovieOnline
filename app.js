@@ -24,14 +24,13 @@ function getMovies(url, containerPaint){
 getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
 
-/*  <---- funcion Para Buscar Peli ---> */
+/*  <---- Funcion Para Buscar Pelicula ---> */
 
 let arrBuscar = [];
 
 let btnSearch = document.querySelector('#btn_search');
 
 let input = document.getElementById('inputSearch');
-
 
 btnSearch.addEventListener('click', (event) => {
     event.preventDefault()
@@ -125,7 +124,6 @@ function paintInfoPelis(data){
     })
 }
 
-//Funcionalidad de la barra de búsqueda
 
 
 

@@ -14,13 +14,15 @@ let listPelis = document.querySelector('.list-pelis');
 
 getActor(idActor);
 
+
+/* <----- Funcion para obtener los datos de los actores ------> */
 function getActor(id){
     fetch(`${API_ACTORS}${id}?${key}`).then(response => response.json()).then(actor => {
         paintActor(actor);
     })
 };
 
-
+/* <------ Funcion para maquetar datos del actor -----> */
 function paintActor(data){
 
     document.querySelector('.nombre').textContent = data.name;
@@ -31,6 +33,8 @@ function paintActor(data){
 
     
 };
+
+/* <------ Funcion para obtener en las peliculas que ha participado ----> */
 
 getPeliculasPar();
 function getPeliculasPar(){
