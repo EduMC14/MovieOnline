@@ -75,14 +75,15 @@ function grid_films(selected_films){
             </div>
         `
     }).join('')
-})
+    })
 }
- function paintInfoPelis2(selected_films){
-    selected_films.forEach(film=> {
-       const  {title, id} = film
-       let film_poster2 = document.getElementById('data-'+id)
+function paintInfoPelis2(selected_films) {
+    selected_films.forEach(film => {
+        const { title, id } = film
+        let film_poster2 = document.getElementById('data-' + id)
         console.log(film_poster2)
-        film_poster2.addEventListener('click', ()=>{
-       window.location=`InfoPelis.html?${id}`;
-                 })
-     }) }
+        film_poster2.addEventListener('click', () => {
+            window.location = `InfoPelis.html?${id}`;
+        })
+    })
+}

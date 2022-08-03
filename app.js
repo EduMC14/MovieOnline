@@ -24,8 +24,9 @@ function getMovies(url, containerPaint){
 getMovies(API_URL, containerCarrusel);
 getMovies(API_URL2, containerCarrusel2);
 
+/*  <---- funcion Para Buscar Peli ---> */
+
 let arrBuscar = [];
-console.log(arrBuscar);
 
 let btnSearch = document.querySelector('#btn_search');
 
@@ -34,6 +35,7 @@ let input = document.getElementById('inputSearch');
 
 btnSearch.addEventListener('click', (event) => {
     event.preventDefault()
+    
     for(let i = 0; i < arrBuscar.length; i++){
         for(let e = 0 ; e < arrBuscar[i].length; e++){
             if(arrBuscar[i][e].title === input.value){
@@ -46,18 +48,14 @@ btnSearch.addEventListener('click', (event) => {
                 imageAlt: 'Custom image',
             })
             }
-            
     }
-    
 }
+    
 return Swal.fire({
     icon: 'error',
     title: 'Oops...Lo siento',
     text: 'No tenemos esta pelicula en el catalogo!'
 })});
-
-
-
 
 
 
